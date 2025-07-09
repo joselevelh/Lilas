@@ -3,3 +3,16 @@ body {
   font-family: 'Times New Roman', Times, serif;
   letter-spacing: -0.02em;
 }
+
+.main-app-grid {
+  display: grid;
+  grid-template-rows: auto 1fr 2fr;
+  height: 100vh;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/*.main-app-grid {*/
+/*  background-image: url("assets/lilas_pattern.svg");*/
+/*  background-repeat: repeat;*/
+/*}*/
