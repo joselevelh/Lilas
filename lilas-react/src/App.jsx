@@ -51,7 +51,8 @@ function App() {
         <>
             <div className="main-app-grid">
                 <Header />
-                <p className="main-instruction"> Search Drakes Lookbooks for Specific Clothes or Themes</p>
+                {/*<p className="main-instruction"> Search Drakes Lookbooks for Specific Clothes or Themes</p>*/}
+                <p className="main-instruction"> Filter Drake's Lookbooks By Season:</p>
                 <SeasonSelector
                     selectedSeasons={selectedSeasons}
                     setSelectedSeasons={setSelectedSeasons}
