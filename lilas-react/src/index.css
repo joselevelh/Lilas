@@ -6,11 +6,59 @@ body {
 
 .main-app-grid {
   display: grid;
-  grid-template-rows: auto 1fr 2fr;
+  grid-template-rows: auto;
   height: 100vh;
   gap: 2rem;
-  padding: 2rem;
+  /*padding: 1rem;*/
+  margin: 0 6rem;
 }
+
+.header-text{
+  font-size: 2.5rem;
+  font-weight: 100;
+  transform: scaleX(.95);
+  /*margin: 0;*/
+  line-height: .5; /* or line-height: normal; */
+  /*vertical-align: top;*/
+}
+
+.main-instruction {
+  font-size: 1.875rem; /* 30px equivalent if root is 16px */
+  font-weight: 100;
+  transform: scaleX(.95);
+  text-align: left;
+}
+
+.season-selector {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.season-button {
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.season-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.season-button.selected {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
 
 /*.main-app-grid {*/
 /*  background-image: url("assets/lilas_pattern.svg");*/
