@@ -59,6 +59,10 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+.rounded-image {
+  border: 2px solid #4A4E67;
+}
+
 
 /*.main-app-grid {*/
 /*  background-image: url("assets/lilas_pattern.svg");*/
