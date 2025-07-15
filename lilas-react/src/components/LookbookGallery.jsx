@@ -1,8 +1,19 @@
 import ImageContainer from "./ImageContainer.jsx";
 import fetchLookbooks from "../helpers/fetchLookbooks.jsx";
+import {useEffect, useState} from "react";
 
-export default async function LookbookGallery({selectedSeasons}) {
-    const filteredLookbooks = await fetchLookbooks(selectedSeasons);
+export default function LookbookGallery({selectedSeasons}) {
+    const [filteredLookbooks, setFilteredLookbooks] = useState([])
+
+    useEffect(() => {
+        async function asyncFetchLookbooks() {
+            const data = await fetchLookbooks(selectedSeasons)
+            setFilteredLookbooks(data)
+        }
+        asyncFetchLookbooks()
+    }, [selectedSeasons])
+
+
     return <div>
         <p>{selectedSeasons.join(', ')} images go here</p>
         {filteredLookbooks.map((lookbook) =>
