@@ -5,6 +5,7 @@ const fetchLookbooks = async (tags) => {
     tags.forEach(tag => params.append('tags', tag));
 
     const response = await fetch(`${baseUrl}?${params.toString()}`);
+    console.log('response', response);
     return response.json();
 };
 

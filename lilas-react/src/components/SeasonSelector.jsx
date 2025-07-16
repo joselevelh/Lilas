@@ -1,10 +1,10 @@
 
 export default function SeasonSelector({ selectedSeasons, setSelectedSeasons }) {
     const seasons = [
-        { name: 'Spring', color: '#7CB342' }, // Fresh green
-        { name: 'Summer', color: '#FFB300' }, // Sunny yellow
-        { name: 'Fall', color: '#FF8F00' },   // Autumn orange
-        { name: 'Winter', color: '#1976D2' }  // Cool blue
+        { name: 'spring', color: '#7CB342' }, // Fresh green
+        { name: 'summer', color: '#FFB300' }, // Sunny yellow
+        { name: 'fall', color: '#FF8F00' },   // Autumn orange
+        { name: 'winter', color: '#1976D2' }  // Cool blue
     ];
 
     const toggleSeason = (seasonName) => {

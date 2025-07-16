@@ -8,14 +8,14 @@ export default function LookbookGallery({selectedSeasons}) {
     useEffect(() => {
         async function asyncFetchLookbooks() {
             const data = await fetchLookbooks(selectedSeasons)
+            console.log('data', data)
             setFilteredLookbooks(data)
         }
         asyncFetchLookbooks()
     }, [selectedSeasons])
+    console.log(filteredLookbooks)
 
-
-    return <div>
-        <p>{selectedSeasons.join(', ')} images go here</p>
+    return <div className='gallery-grid'>
         {filteredLookbooks.map((lookbook) =>
             lookbook.images.map((imageUrl, imageIndex) => (
                 <ImageContainer

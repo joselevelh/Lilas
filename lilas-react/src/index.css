@@ -55,26 +55,11 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-
-.lookbook-gallery {
-  margin-top: 30px;
-}
-
-.gallery-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.results-count {
-  color: #7f8c8d;
-  font-size: 1rem;
-}
-
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px;
-  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* spacing between images */
+  justify-content: start; /* or center, or space-between */
 }
 
 .image-container {
@@ -93,8 +78,11 @@ body {
 
 .rounded-image {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  /*height: 400px;*/
+  height: 100%;
+  max-height: 80vh;
+  /*object-fit: cover;*/
+  object-fit: scale-down;
   transition: opacity 0.3s ease;
   border: 2px solid #4A4E67;
 }
@@ -175,24 +163,6 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-.gallery-loading,
-.gallery-error,
-.gallery-empty {
-  text-align: center;
-  padding: 60px 20px;
-  color: #7f8c8d;
-}
-
-.gallery-error button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 @media (max-width: 768px) {
