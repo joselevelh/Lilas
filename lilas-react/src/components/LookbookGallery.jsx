@@ -4,12 +4,17 @@ import {useEffect, useState} from "react";
 
 export default function LookbookGallery({selectedSeasons}) {
     const [filteredLookbooks, setFilteredLookbooks] = useState([])
+    const [hasMore, setHasMore] = useState(true)
+    const [nextCursor, setNextCursor] = useState("")
 
+    // First Fetch when new season is selected
     useEffect(() => {
         async function asyncFetchLookbooks() {
-            const data = await fetchLookbooks(selectedSeasons)
+            const data = await fetchLookbooks(selectedSeasons, "")
             console.log('data', data)
-            setFilteredLookbooks(data)
+            setFilteredLookbooks(data.lookbooks_list)
+            setHasMore(data.has_more)
+            setNextCursor(data.next_cursor) // Load more calls will use this in the future
         }
         asyncFetchLookbooks()
     }, [selectedSeasons])
