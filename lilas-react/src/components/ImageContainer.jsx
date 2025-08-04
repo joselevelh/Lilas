@@ -35,15 +35,15 @@ export default function ImageContainer({ imageUrl, alt = "Image", season, tags =
                 />
             )}
 
-            <div className="image-info">
-                <h3>{alt}</h3>
-                <span className="season-tag">{season}</span>
-                <div className="tags">
-                    {tags.map(tag => (
-                        <span key={tag} className="tag">{tag}</span>
-                    ))}
-                </div>
-            </div>
+            {/*<div className="image-info">*/}
+            {/*    <h3>{alt}</h3>*/}
+            {/*    <span className="season-tag">{season}</span>*/}
+            {/*    <div className="tags">*/}
+            {/*        {tags.map(tag => (*/}
+            {/*            <span key={tag} className="tag">{tag}</span>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     );
 }

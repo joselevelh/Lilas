@@ -8,7 +8,7 @@ export default function LookbookGallery({selectedSeasons}) {
     const [nextCursor, setNextCursor] = useState("")
     const [loading, setLoading] = useState(false)
 
-    // First Fetch when new season is selected
+    // First Fetch when a new season is selected
     useEffect(() => {
         async function asyncFetchLookbooks() {
             setLoading(true)
@@ -57,7 +57,7 @@ export default function LookbookGallery({selectedSeasons}) {
             const currentPostion = scrollTop + windowHeight;
             const bottomOfPage = documentHeight - offset;
 
-            if (currentPostion> bottomOfPage && hasMore && loading === false) {
+            if (currentPostion > bottomOfPage && hasMore && loading === false) {
                 loadMore();
             }
         }
@@ -75,7 +75,8 @@ export default function LookbookGallery({selectedSeasons}) {
                 />
             ))
         )}
-        {loading && (
+
+        {loading && filteredLookbooks.length > 0 && (
             <div className="loading-indicator">
                 <p>Loading more lookbooks...</p>
             </div>
