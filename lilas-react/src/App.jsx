@@ -3,6 +3,7 @@ import { useState } from 'react'
 import SeasonSelector from "./components/SeasonSelector.jsx";
 import LookbookGallery from "./components/LookbookGallery.jsx";
 import LilasHeader from "./components/LilasHeader.jsx";
+import {fetchLookbooksByTag} from "./helpers/fetchLookbooks.jsx";
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
                 <p className="main-instruction">{selectedSeasons.length === 0
                     ? "Or Just Browse..."
                     : `Browse ${selectedSeasons.join(', ')} Lookbooks...`}</p>
-                <LookbookGallery selectedSeasons={selectedSeasons} />
+                <LookbookGallery selectedFilter={selectedSeasons} fetchFunction ={fetchLookbooksByTag} />
             </div>
         </>
     )

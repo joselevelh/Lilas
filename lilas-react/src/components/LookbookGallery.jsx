@@ -1,8 +1,7 @@
 import ImageContainer from "./ImageContainer.jsx";
-import fetchLookbooks from "../helpers/fetchLookbooks.jsx";
 import {useEffect, useState} from "react";
 
-export default function LookbookGallery({selectedSeasons}) {
+export default function LookbookGallery({selectedFilter, fetchFunction}) {
     const [filteredLookbooks, setFilteredLookbooks] = useState([])
     const [hasMore, setHasMore] = useState(true)
     const [nextCursor, setNextCursor] = useState("")
@@ -13,7 +12,7 @@ export default function LookbookGallery({selectedSeasons}) {
         async function asyncFetchLookbooks() {
             setLoading(true)
             try{
-                const data = await fetchLookbooks(selectedSeasons, "")
+                const data = await fetchFunction(selectedFilter, "")
                 console.log('data', data)
                 setFilteredLookbooks(data.lookbooks_list)
                 setHasMore(data.has_more)
@@ -25,7 +24,7 @@ export default function LookbookGallery({selectedSeasons}) {
             }
         }
         asyncFetchLookbooks()
-    }, [selectedSeasons])
+    }, [selectedFilter])
     console.log(filteredLookbooks)
 
 
@@ -33,7 +32,7 @@ export default function LookbookGallery({selectedSeasons}) {
         if (loading || !hasMore) return;
         setLoading(true)
         try{
-            const data = await fetchLookbooks(selectedSeasons, nextCursor);
+            const data = await fetchFunction(selectedFilter, nextCursor);
             console.log('loading more data', data);
 
             // Append new lookbooks to existing list
