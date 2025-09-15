@@ -27,9 +27,8 @@ export const ImageOrListSlider = ({ selectedImageOrList, setSelectedImageOrList 
             >
                 <span className={'thumb-base ' + getThumbClasses()} />
             </button>
-
             <span className={'label-base ' + getLabelClasses()}>
-                {isImageMode ? 'Image View ' : 'List View '}
+                Image View
             </span>
         </div>
     );

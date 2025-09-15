@@ -1,4 +1,6 @@
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import ImageContainer from "./ImageContainer.jsx";
+import LilasHeader from "./LilasHeader.jsx";
 
 function LookbookDetailPage() {
     const location = useLocation();
@@ -22,14 +24,17 @@ function LookbookDetailPage() {
 
     return (
         <div>
+            <LilasHeader />
             <h1>{lookbookName.replace(/-/g, ' ')}</h1>
-            {images.map((imageUrl, imageIndex) => (
-                <ImageContainer
-                    key={`${lookbookName}-${imageIndex}`}
-                    imageUrl={imageUrl}
-                    alt={`${lookbookName} image ${imageIndex + 1}`}
-                />
-            ))}
+            <div className="gallery-grid">
+                {images.map((imageUrl, imageIndex) => (
+                    <ImageContainer
+                        key={`${lookbookName}-${imageIndex}`}
+                        imageUrl={imageUrl}
+                        alt={`${lookbookName} image ${imageIndex + 1}`}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
