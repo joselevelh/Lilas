@@ -1,7 +1,7 @@
 import ImageContainer from "./ImageContainer.jsx";
 import {useEffect, useState} from "react";
 
-export default function LookbookGallery({selectedFilter, fetchFunction}) {
+export default function LookbookImageGallery({selectedFilter, fetchFunction}) {
     const [filteredLookbooks, setFilteredLookbooks] = useState([])
     const [hasMore, setHasMore] = useState(true)
     const [nextCursor, setNextCursor] = useState("")
